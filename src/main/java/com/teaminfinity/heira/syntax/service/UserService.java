@@ -1,5 +1,6 @@
 package com.teaminfinity.heira.syntax.service;
 
+import com.teaminfinity.heira.entity.Like;
 import com.teaminfinity.heira.entity.User;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface UserService {
 
     //filter
     User filter(String query);
+
+    List<Like> getLikesByUserId(String hiraId);
 }

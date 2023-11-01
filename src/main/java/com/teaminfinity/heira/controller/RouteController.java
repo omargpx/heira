@@ -25,7 +25,7 @@ public class RouteController {
                                     @RequestParam(name="id",required=false) Integer id,
                                     HttpServletRequest request){
         if (null!=tag)
-            return ResponseEntity.ok(hira.getResponse(request,svr_name,service.getByTagEnviroment(tag),HttpStatus.OK));
+            return ResponseEntity.ok(hira.getResponse(request,svr_name,service.getByTagEnvironment(tag),HttpStatus.OK));
         if(null!=id)
             return ResponseEntity.ok(hira.getResponse(request,svr_name,service.getById(id),HttpStatus.OK));
         return ResponseEntity.ok(hira.getResponse(request,svr_name,service.getAll(),HttpStatus.OK));
@@ -34,5 +34,12 @@ public class RouteController {
     @PostMapping
     public ResponseEntity<?> save(@RequestBody Route route,HttpServletRequest request){
                 return ResponseEntity.ok(hira.getResponse(request,svr_name,service.save(route),HttpStatus.OK));
+    }
+
+    @PostMapping("/{routeId}/like")
+    public ResponseEntity<?> saveUserLikeToRoute(@PathVariable Integer routeId,
+                                                 @RequestParam(name = "hId")String hiraId,
+                                                 HttpServletRequest request){
+        return ResponseEntity.ok(hira.getResponse(request,svr_name,service.setUserLike(routeId,hiraId),HttpStatus.OK));
     }
 }

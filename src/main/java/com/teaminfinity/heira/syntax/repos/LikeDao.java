@@ -9,6 +9,8 @@ import java.util.List;
 
 @Repository
 public interface LikeDao extends JpaRepository<Like,Integer> {
+
     List<Like> findAllByRoute(Route route);
+    Integer countAllByRoute(Route route);
     List<Like> findAllByUser(User user);
 }

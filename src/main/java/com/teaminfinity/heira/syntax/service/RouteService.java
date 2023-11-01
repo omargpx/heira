@@ -11,5 +11,7 @@ public interface RouteService {
     Route save(Route route);
 
     //filter
-    List<Route> getByTagEnviroment(RouteType tag);
+    List<Route> getByTagEnvironment(RouteType tag);
+
+    Object setUserLike(Integer routeId, String hiraId);
 }

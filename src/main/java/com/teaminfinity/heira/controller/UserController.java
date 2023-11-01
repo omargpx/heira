@@ -30,6 +30,11 @@ public class UserController {
         return ResponseEntity.ok(HIRA.getResponse(request,svr_name,service.getAll(),HttpStatus.OK));
     }
 
+    @GetMapping("/{hiraId}/likes")
+    public ResponseEntity<?> getLikesWhereUser(@PathVariable String hiraId, HttpServletRequest request){
+        return ResponseEntity.ok(HIRA.getResponse(request,svr_name,service.getLikesByUserId(hiraId),HttpStatus.OK));
+    }
+
     @PostMapping
     public ResponseEntity<?> save(@RequestBody User user,
                                   HttpServletRequest request){
