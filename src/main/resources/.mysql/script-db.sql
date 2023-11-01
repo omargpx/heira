@@ -23,7 +23,7 @@ USE `dbo_hira` ;
 CREATE TABLE IF NOT EXISTS `dbo_hira`.`tsg_user` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `no_username` VARCHAR(45) NOT NULL,
-  `hira_id` VARCHAR(15) NOT NULL,
+  `hira_id` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id_user`))
 ENGINE = InnoDB;
 
@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- Table `dbo_hira`.`tax_locations`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbo_hira`.`tax_locations` (
-  `id_location` INT NOT NULL,
+  `id_location` INT NOT NULL AUTO_INCREMENT,
   `val_lat` VARCHAR(45) NOT NULL,
   `val_long` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_location`))
@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbo_hira`.`tma_routes` (
   `id_route` INT NOT NULL AUTO_INCREMENT,
-  `tag_enviroment` VARCHAR(45) NOT NULL,
+  `tag_environment` VARCHAR(45) NOT NULL,
   `val_noise` DECIMAL(3,2) NOT NULL,
   `val_airquality` DECIMAL(3,2) NOT NULL,
   `val_forestation` DECIMAL(3,2) NOT NULL,
